@@ -1,0 +1,33 @@
+const mongoose = require('mongoose');
+
+// Define the schema for the UserDetail model
+const userDetailSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    profession: {
+        type: String
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    phone: {
+        type: String
+    },
+    college: {
+        type: String
+    }
+});
+
+// Create the UserDetail model using the schema
+const UserDetail = mongoose.model('UserDetail', userDetailSchema);
+
+module.exports = UserDetail;
